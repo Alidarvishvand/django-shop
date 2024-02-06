@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
-    'account'
+    'account',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +135,20 @@ AUTH_USER_MODEL = 'account.User'
 STATICFILES_DIRS = [
     BASE_DIR/'static'
 ]
+
+
+MEDIA_ROOT = BASE_DIR / 'media'
+
+
+
+MEDIA_URL = '/media/'
+# arvan cloud storage
+DEFAULT_FILE_STORAGE = "storages.backends.s3.S3Storage"
+
+AWS_ACCESS_KEY_ID = 'd859fc2d-fa5b-4aa4-bd50-25f917b6fb1a'
+AWS_SECRET_ACCESS_KEY = '7cea87f0cbbbc6bfe6e19e382c85150252d70a8237aba66ebbf2e609690bd67f'
+AWS_S3_ENDPOINT_URL = 'https://s3.ir-thr-at1.arvanstorage.ir'
+AWS_STORAGE_BUCKET_NAME = 'django-shop-one'
+AWS_SERVICE_NAME = 's3'
+AWS_S3_FILE_OVERWRITE = False
+# AWS_LOCAL_STORAGE = f'{BASE_DIR}/aws/'

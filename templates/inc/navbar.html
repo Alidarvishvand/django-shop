@@ -2,7 +2,10 @@
     <div class="container-fluid">
         <div class="navbar-nav">
             <a class = 'nav-link active' href="{% url 'home:home' %}">home</a>
-            <a class = 'nav-link active' href="{% url 'account:user_register' %}">register</a>
+            <a class = 'nav-link active' href="{% url 'account:user_register' %}">register</a> 
+            {% if request.user.is_admin %}
+            <a class = 'nav-link active' href="{% url 'home:bucket' %}">Bucket</a> 
+            {% endif %}
         </div>
     </div>
   </nav>
