@@ -7,7 +7,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODLE','B.settings')
 
 celery_app = Celery('B')
 celery_app.autodiscover_tasks()
-celery_app.conf.broker_url = 'C:\\'
+celery_app.conf.broker_url = 'amqp://'
 celery_app.conf.result_backend = 'rpc://'
 celery_app.conf.task_serializer = 'json'
 celery_app.conf.result_serializer = 'pickle'
