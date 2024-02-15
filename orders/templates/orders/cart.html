@@ -32,4 +32,6 @@
         <td>{{ cart.get_total_price }}</td>
     </tr>
 </tbody>
+<a href="{% url 'orders:order_create' %}" class="btn btn-primary">Checkout</a>
+
 {% endblock %}
